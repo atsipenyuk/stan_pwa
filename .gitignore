@@ -1,0 +1,46 @@
+# Text editor backups #
+#######################
+*~
+*#
+.#*
+
+# Compiled Source #
+*.pyc
+
+# Libraries converted from python #
+
+
+
+# Build directories #
+test/bin/build/*
+/*/build/*
+/*/output/*
+*model.so
+*py_wrapper.o
+
+
+# Generated Stan files #
+*STAN_data_generator.hpp
+*STAN_data_generator
+*STAN_amplitude_fitting.hpp
+*STAN_amplitude_fitting
+
+# Converted and derived data files #
+*normalization_integral*.py
+*background_to_signal_ratio.py
+*STAN_data_generator.data.py
+*root
+
+# Link to the model file
+src/model.hpp
+
+# CSV files (the data is converted and saved in .root)
+*.csv
+*/example_models/test_two_toy_res_w_background.py
+
+# Do not ignore these files (even if they are in subdirectories)
+# On the other hand, ignore them - dont really back them up
+#!/*/data*/output.root
+#!/*/data*/generated_data.root
+#!/*/data*/STAN_data_generator.data.R
+#!/*/data*/STAN_amplitude_fitting.data.R
