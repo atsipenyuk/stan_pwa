@@ -23,6 +23,9 @@ cd_stan_pwa
 MDECA_DIR=$(pwd)
 cd $MODEL_DIR
 
+mkdir -p build
+mkdir -p output
+
 python $MDECA_DIR/scripts/make_stan.py stan/STAN_data_generator.stan build/STAN_data_generator
 #python $MDECA_DIR/scripts/make_stan.py stan/STAN_amplitude_fitting.stan build/STAN_amplitude_fitting 
 

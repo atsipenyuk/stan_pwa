@@ -26,17 +26,6 @@ public:
     std::vector< Eigen::Matrix<typename boost::math::tools::promote_arg<T>::type, Eigen::Dynamic, 1> >
     amplitude_vector(const Var_t<T>&);
 
-    ///> Same as above, but symmetrized
-    template <typename T>
-    //    C_t<typename boost::math::tools::promote_arg<T>::type> 
-    std::vector<typename boost::math::tools::promote_arg<T>::type>
-    amplitude_sym(unsigned int, const Var_t<T>&);
-
-    template <typename T>
-    //CV_t<typename boost::math::tools::promote_arg<T>::type> 
-    std::vector< Eigen::Matrix<typename boost::math::tools::promote_arg<T>::type, Eigen::Dynamic, 1> >
-    amplitude_vector_sym(const Var_t<T>&);
-
   template <typename T0, typename T1>
   static
   typename boost::math::tools::promote_args<T0,T1>::type ///> return scalar   
@@ -77,27 +66,6 @@ private:
 
     for (unsigned int i = 0; i < this->num_res_; i++) {
       res[i] = this->resonances_[i].value(y(0), y(1));
-    }
-    return res;
-  };
-
-
-  template <typename T>
-  //C_t<typename boost::math::tools::promote_arg<T>::type> 
-  std::vector<typename boost::math::tools::promote_arg<T>::type>
-  Model::amplitude_sym(unsigned int i, const Var_t<T>& y) {
-    return this->resonances_[i].value_sym(y(0), y(1));
-  };
-
-
-  template <typename T>
-  std::vector< Eigen::Matrix<typename boost::math::tools::promote_arg<T>::type, Eigen::Dynamic, 1> >
-    //  CV_t<typename boost::math::tools::promote_arg<T>::type> 
-  Model::amplitude_vector_sym(const Var_t<T>& y) {
-    CV_t<typename boost::math::tools::promote_arg<T>::type>
-      res(2, (Eigen::Matrix<T,Eigen::Dynamic,1> (this->num_res_)));
-    for (int i = 0; i < this->num_res_; i++) {
-      res[i] = this->resonances_[i].value_sym(y(0), y(1));
     }
     return res;
   };

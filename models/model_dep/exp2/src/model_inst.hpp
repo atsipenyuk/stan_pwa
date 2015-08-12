@@ -13,8 +13,8 @@ namespace stan_pwa {
   particle b = particles::pi;
   particle c = particles::pi;
 
-  Bw_res my_res_1(P, a, b, c, particles::rho_770, 0.1491);
-  Bw_res my_res_2(P, a, b, c, particles::f0_1370, 0.350);
+  Sqr my_res_1(P, a, b, c);//, particles::rho_770, 0.1491);
+  Sqr my_res_2(P, a, b, c);//, particles::f0_1370, 0.350);
   
   std::vector<Base_3d_res> my_res_list = {my_res_1, my_res_2};
   bool sym_flag = 1;
