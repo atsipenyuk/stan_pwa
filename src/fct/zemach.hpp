@@ -16,7 +16,7 @@ namespace fct {
   template <typename T0, typename T1, typename T2>
   typename boost::math::tools::promote_args<T0,T1,T2>::type
   zemach(int J, const T0& m2_ab, const T1& m2_bc, const T2& m2_R,
-         const particle &a, const particle &b, const particle &c) {
+         const Particle &a, const Particle &b, const Particle &c) {
 
     if (J == 0) return 1;
     if (J == 1) {
@@ -42,7 +42,7 @@ namespace fct {
   // called zemach(J,j,l,...), respectively.
   // Note: to see, how the invariant mass variables m2_ij
   // are converted to z2, cos2_theta, see, e.g., 
-  // include/struct/four_body/struct_four_particle_decay_channel.hpp
+  // include/struct/four_body/struct_four_Particle_decay_channel.hpp
   template <typename T0, typename T1>
   typename boost::math::tools::promote_args<T0,T1>::type
   zemach(const int J, const int j, const int l, 

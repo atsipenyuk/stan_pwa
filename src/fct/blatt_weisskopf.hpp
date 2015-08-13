@@ -15,10 +15,10 @@ namespace fct {
    * Implemented as in: arxiv:1406.6311v2, p. 151, eq. (13.2.8).
    *
    * @param J_R resonance spin
-   * @param r2_p parent particle squared radius
+   * @param r2_p parent Particle squared radius
    * @param m2_ab Dalitz plot variable (squared mass)
-   * @param m_a 1st daughter particle mass of m2_ab
-   * @param m_b 2nd daughter particle mass of m2_ab
+   * @param m_a 1st daughter Particle mass of m2_ab
+   * @param m_b 2nd daughter Particle mass of m2_ab
    * @return Blatt-Weisskopf form factor
    */
   template <typename T0, typename T1, typename T2>

@@ -4,7 +4,7 @@
 #include <cmath> // sqrt
 
 #include <stan_pwa/src/structures/particles_def.hpp> 
-// class particle
+// class Particle
 
 /*
  * Check whether we are in the energetically allowed region of the decay.
@@ -36,8 +36,8 @@ namespace fct {
   template <typename T>
   inline
   bool valid(const T &m2_ab, const T &m2_bc, 
-             const particle &p, const particle &a, 
-             const particle &b, const particle &c)
+             const Particle &p, const Particle &a, 
+             const Particle &b, const Particle &c)
   {
     if ( (m2_ab < (a.m2 + b.m2 + 2. * sqrt(a.m2 * b.m2))) ||
          (m2_ab > (p.m2 + c.m2 - 2. * sqrt(p.m2 * c.m2)))   ) {
@@ -60,7 +60,7 @@ namespace fct {
 
 
   /*
-   * Overloaded input arguments to allow particle masses.
+   * Overloaded input arguments to allow Particle masses.
    */
   template <typename T0, typename T1, typename T2, typename T3, typename T4>
   inline
@@ -104,9 +104,9 @@ namespace fct {
   template <typename T0, typename T1, typename T2, typename T3, typename T4>
   bool valid_5d(const T0 &m2_12, const T1 &m2_14, const T2 &m2_23,
     const T3 &m2_34, const T4& m2_13,
-    const particle &Parent,
-    const particle &a, const particle &b,
-    const particle &c, const particle &d)
+    const Particle &Parent,
+    const Particle &a, const Particle &b,
+    const Particle &c, const Particle &d)
   {
     typedef typename boost::math::tools::promote_args<T1,T3,T4>::type T_134;
     typedef typename boost::math::tools::promote_args<T0,T1,T2,T3,T4>::type T_res;

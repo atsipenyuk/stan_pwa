@@ -30,7 +30,7 @@ template <typename T0, typename T1, typename T2, typename T3, typename T4>
 theta_z_values<typename boost::math::tools::promote_args<T0,T1,T2,T3,T4>::type>
 P_R1d_R2cd_theta_z(const T0 &m2_12, const T1 &m2_14, const T2 &m2_23,
     const T3 &m2_34, const T4& m2_13,
-    const particle& P, const particle& a, const particle& b, const particle& c, const particle& d)
+    const Particle& P, const Particle& a, const Particle& b, const Particle& c, const Particle& d)
 {
   typedef typename boost::math::tools::promote_args<T0,T2,T4>::type T_123;
   typedef typename boost::math::tools::promote_args<T0,T1,T2,T3,T4>::type T_res;

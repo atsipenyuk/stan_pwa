@@ -4,7 +4,7 @@
 #include <vector>
 #include <cmath>
 
-#include <stan_pwa/src/structures/particles.hpp> // particles::pi, k
+#include <stan_pwa/src/flat_structures/particles.hpp> // particles::pi, k
 #include <stan_pwa/src/fct/breakup_momentum.hpp> // breakup_momentum::complex_p
 #include <stan_pwa/src/complex.hpp>
 namespace mc = stan_pwa::complex;

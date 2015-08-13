@@ -17,10 +17,14 @@ namespace stan_pwa {
   template <typename T>
     using Var_t = Eigen::Matrix<T, Eigen::Dynamic,1>;
 
-  ///> Variable type (Real-valued vector)
+  ///> Promoted T
   template <typename T>
     using promoted_t = typename boost::math::tools::promote_args<T>::type;
-  
+
+  ///> Pointer to amplitude function, 3-body-decay
+  template <typename T>
+    using Amp_ptr_2 = C_t<T> (*) (const T&, const T&);
+
 }
 
 
@@ -38,14 +42,17 @@ namespace stan {
 
   ///> Variable type (Real-valued vector)
   template <typename T>
-    using Var_t = typename Eigen::Matrix<T, Eigen::Dynamic,1>;
+    using Var_t = Eigen::Matrix<T, Eigen::Dynamic,1>;
 
-
-  ///> Variable type (Real-valued vector)
+  ///> Promoted T
   template <typename T>
     using promoted_t = typename boost::math::tools::promote_args<T>::type;
-  
-}
+
+  ///> Pointer to amplitude function, 3-body-decay
+  template <typename T>
+    using Amp_ptr_2 = std::vector<T> (*) (const T&, const T&);
+ 
+  }
 }
 
 #endif

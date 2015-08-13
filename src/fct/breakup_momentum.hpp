@@ -15,7 +15,7 @@ namespace fct {
     /**
      * Return squared breakup momentum (R -> ab).
      *
-     * @param m2_R decaying particle squared mass
+     * @param m2_R decaying Particle squared mass
      * @param m_a 1st daughter mass
      * @param m_b 2nd daughter mass
      * @return breakup momentum
@@ -37,7 +37,7 @@ namespace fct {
     /**
      * Return complex breakup momentum.
      *
-     * @param m2_R decaying particle squared mass
+     * @param m2_R decaying Particle squared mass
      * @param m_a 1st daughter mass
      * @param m_b 2nd daughter mass
      * @return breakup momentum
@@ -64,8 +64,8 @@ namespace fct {
     /**
      * Ratio of squared breakup momenta (N -> ab) / (D -> ab).
      *
-     * @param m2_N 1st decaying particle squared mass
-     * @param m2_D 2nd decaying particle squared mass
+     * @param m2_N 1st decaying Particle squared mass
+     * @param m2_D 2nd decaying Particle squared mass
      * @param m_a 1st daughter mass
      * @param m_b 2nd daughter mass
      * @return breakup momentum ratio
