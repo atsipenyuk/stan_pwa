@@ -7,6 +7,12 @@
 # Compiled Source #
 *.pyc
 
+# Backups of vanilla stan files created by the installation #
+install_files/ast_vanilla_stan.hpp
+install_files/ast_def_vanilla_stan.cpp
+install_files/makefile_vanilla_stan
+install_files/function_signatures_vanilla_stan.h
+
 # Libraries converted from python #
 
 
