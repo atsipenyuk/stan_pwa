@@ -76,7 +76,7 @@ def __eval_integrate_A(func, m, N_points, n_vars):
 
 
 # Overload the functions above for a tensor product of two different functions
-def integral_of_tensor_product(func1, func2, bounds, N=1000000):
+def integral_of_tensor_product_2func(func1, func2, bounds, N=1000000):
     """
     For functions func1, func2 that take a list of floats and
     return complex vectors A1, A2 this function returns the matrix
@@ -93,7 +93,7 @@ def integral_of_tensor_product(func1, func2, bounds, N=1000000):
 
     return [(res1+res2)/2., np.abs(res1-res2)/2]
 
-def __eval_integrate_A(func1, func2, m, N_points, n_vars):
+def __eval_integrate_A_2func(func1, func2, m, N_points, n_vars):
     # Generator yielding I for func evaluated at N_points random points,
     # as described above.
     num = 0

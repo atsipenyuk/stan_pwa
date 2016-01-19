@@ -118,8 +118,7 @@ else:
     # No more than 9 chains though (Stan is fine with it, but
     # correct the merge outputs part, if you need more than 9 chains).
     else:
-        # Sample
-        subprocess.Popen('for i in {1..' + str(args.chains) + '}\n' + \
+        command = 'for i in {1..' + str(args.chains) + '}\n' + \
                              'do \n' + \
                              "./" + args.input_file + \
                              " sample num_warmup="+ str(num_warmup) + \
@@ -129,7 +128,10 @@ else:
                              " output file=" + args.output_file[:-4] + \
                              "$i.csv" + \
                              init + " &\n" + \
-                             'done \n', shell=True).wait()
+                             'done \n'
+        print(command)
+        # Sample
+        subprocess.Popen(command, shell=True, executable='/bin/bash').wait()
         ## In plain bash, the command above translates to following:
         # 
         # for i in {1..1}

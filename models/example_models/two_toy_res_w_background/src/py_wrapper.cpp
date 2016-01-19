@@ -57,8 +57,8 @@ namespace stan {
     /**
      * vector _A_v_backgr_py_wrapper(vector)
      *
-     * Argument wrapper for the function A_v_background_abs2 to call it from 
-     * python as A_v_background_abs2.
+     * Argument wrapper for the function background_vector to call it from 
+     * python as background_vector.
      *
      * Proceed as in the function above with mutatis mutandis siplifications.
      */
@@ -74,7 +74,7 @@ namespace stan {
 
         // Call A_v and convert Eigen to std::vector
 	std::vector<double> res(num_background());
-	Eigen::Matrix<double, Eigen::Dynamic, 1> res_eigen = A_v_background_abs2(y);
+	Eigen::Matrix<double, Eigen::Dynamic, 1> res_eigen = background_vector(y);
 	for (int i=0; i<num_background(); i++) {
 	  res[i] = res_eigen(i);
 	}
@@ -93,7 +93,7 @@ BOOST_PYTHON_MODULE(model)
         .def(vector_indexing_suite<std::vector<double> >() );
 
     def("amplitude_vector", stan::math::_A_r_py_wrapper, args("x","y"));
-    def("A_v_background_abs2", stan::math::_A_v_backgr_py_wrapper, args("x","y"));
+    def("background_vector", stan::math::_A_v_backgr_py_wrapper, args("x","y"));
     def("num_background", stan::math::num_background);
     def("num_resonances", stan::math::num_resonances);
     def("num_variables", stan::math::num_variables);

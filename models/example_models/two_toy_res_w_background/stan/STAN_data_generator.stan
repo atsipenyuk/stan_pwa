@@ -18,7 +18,7 @@ model {
   logH <- 0;
 
   logH <- logH + log( f_genfit(amplitude_vector(y), theta, 
-       	       	      	      A_v_background_abs2(y), theta_background_abs2) );
+       	       	      	      background_vector(y), theta_background_abs2) );
   increment_log_prob(logH);
 
 }

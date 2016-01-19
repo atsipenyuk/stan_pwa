@@ -7,7 +7,7 @@ data {
   matrix[num_resonances(), num_resonances()] I[2];
 
   // Real background PWA amplitudes squared corresponding to each event
-  vector[num_background()] A_v_background_abs2_data[D];
+  vector[num_background()] background_vector_data[D];
   // Real normalization background vector corresponding to the model
   vector[num_background()] I_background;
 }
@@ -46,7 +46,7 @@ model {
   // Sum over all events
   for (d in 1:D)
     logH <- logH + 
-    log(f_genfit(amplitude_vector_data[d], theta, A_v_background_abs2_data[d], 
+    log(f_genfit(amplitude_vector_data[d], theta, background_vector_data[d], 
 				      theta_background_abs2) 
 	/ norm(theta, I, theta_background_abs2, I_background) );
 

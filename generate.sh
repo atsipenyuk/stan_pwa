@@ -42,6 +42,16 @@ fi
 # Create root file containing generated events
 ${STAN_PWA_DIR}/bin/csv_to_root.py output/generated_data.csv output/generated_data.root
 
-# Run data analysis: evaluate Monte Carlo integrals, evaluate amplitude at the events
-${MODEL_DIR}/bin/data_analysis__root_to_dataR.py
+# Run data analysis: evaluate Monte Carlo integrals, evaluate amplitude at the events - this part is separated out and moved to script called 'prepare_for_fitting.sh'
+# ${MODEL_DIR}/bin/data_analysis__root_to_dataR.py
+
+
+
+
+
+
+
+
+
+
 

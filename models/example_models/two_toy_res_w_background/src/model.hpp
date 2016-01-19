@@ -8,7 +8,7 @@
 
 #include <stan_pwa/src/complex.hpp>
 #include <stan_pwa/src/real.hpp>
-#include <stan_pwa/src/structures/resonances.hpp>
+#include <stan_pwa/src/structures.hpp>
 
 namespace mc = stan_pwa::complex;
 namespace mr = stan_pwa::real;
@@ -105,7 +105,7 @@ namespace stan {
 
 
     /**
-     * vector A_v_background_abs2(vector)
+     * vector background_vector(vector)
      *
      * Takes the data vector y as an argument, returns 
      * real vector [|A(1,y)|^2 ... |A(NUM_BCKGR, y)|^2] 
@@ -114,7 +114,7 @@ namespace stan {
     template <typename T0__>
     //inline
     Eigen::Matrix<typename boost::math::tools::promote_args<T0__>::type, Eigen::Dynamic,1>
-    A_v_background_abs2(const Eigen::Matrix<T0__, Eigen::Dynamic,1>& y) {
+    background_vector(const Eigen::Matrix<T0__, Eigen::Dynamic,1>& y) {
 
         typedef typename boost::math::tools::promote_args<T0__>::type T2;
 
@@ -139,7 +139,7 @@ namespace stan {
     typename boost::math::tools::promote_args<T1,T2,T3,T4>::type
     f_genfit(const std::vector<Eigen::Matrix<T1, Eigen::Dynamic, 1> >& A_r,
 	    const std::vector<Eigen::Matrix<T2, Eigen::Dynamic, 1> >& theta,
-	    const Eigen::Matrix<T3, Eigen::Dynamic, 1>& A_v_background_abs2_,
+	    const Eigen::Matrix<T3, Eigen::Dynamic, 1>& background_vector_,
 	    const Eigen::Matrix<T4, Eigen::Dynamic, 1>& theta_background_abs2_) {
 
       //typename boost::math::tools::promote_args<T0,T1>::type res = 0;
@@ -151,7 +151,7 @@ namespace stan {
 	    mc::vector::mult(A_r, theta)))
 
 	// Add background
-	+ mr::vector::mult(A_v_background_abs2_,theta_background_abs2_);
+	+ mr::vector::mult(background_vector_,theta_background_abs2_);
     }
 
 

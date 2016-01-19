@@ -19,7 +19,7 @@ function cd_stan_pwa
 # Define model directory and meson_deca directory
 MODEL_DIR=$(pwd)
 cd_stan_pwa
-MDECA_DIR=$(pwd)
+STAN_PWA_DIR=$(pwd)
 cd $MODEL_DIR
 
 # Merge
@@ -27,4 +27,10 @@ grep lp__ output/output1.csv > output/output.csv
 sed '/^[#l]/d'  output/output?.csv >> output/output.csv
 
 # Translate to root
-$MDECA_DIR/bin/csv_to_root.py $MODEL_DIR/output/output.csv $MODEL_DIR/output/output.root
+$STAN_PWA_DIR/bin/csv_to_root.py $MODEL_DIR/output/output.csv $MODEL_DIR/output/output.root
+
+
+
+
+
+
