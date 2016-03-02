@@ -1,7 +1,7 @@
 src
 ===
 
-This directory contains the file 'model.hpp' (or the link to it). This
+You must add the link to the file 'model.hpp' to this folder. This file
 is the core file provided to Stan; all functions describing the PWA
 (such as amplitude_vector, f_model, norm, etc.) either  
  - must be defined in 'model.hpp' or  
