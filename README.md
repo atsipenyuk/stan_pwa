@@ -67,15 +67,15 @@ is present in your .bashrc file.
 ### Example
 The following commands demonstrate how to generate data and sample one complex parameter modeling D->3pi decay via two fictitious Breit-Wigner resonances.
 ```bash
-..$ cd cmdstan-2.9.0/stan pwa/models/two_toy_res  
-..$ ./../../../relink model.sh # Use the correct model.hpp file  
+..$ cd cmdstan-2.9.0/stan_pwa/models/two_toy_res  
+..$ ./../../../relink_model.sh # Use the correct model.hpp file  
 ..$ ./../../../build.sh # Build executable files  
 ..$ ./../../../generate.sh 100000 # Generate 100 000 events  
-..$ root output/generated data.root # You may check the generated data    
+..$ root output/generated_data.root # You may check the generated data    
 root [1] t->Draw("y.2:y.1>>hh(100,0,3,100,0,3)","","COLZ",20000, 0);  
 root [2] .q  
 ..$ # To evaluate amplitudes, python library of our model must be made  
-..$ ./../../../wrap python.sh # Creates build/model.so  
+..$ ./../../../wrap_python.sh # Creates build/model.so  
 ..$ # Calculate normalization integrals; bounds of Dalitz plot are 0 and 3 in both axes  
 ..$ ./../../../calculate_normalization_integrals.py 0 3 0 3  
 ..$ # Evaluate amplitudes and Monte Carlo integrals  
