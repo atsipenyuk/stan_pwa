@@ -1,7 +1,7 @@
 # stan_pwa
 CmdStan module for meson decay PWA
 
-The project <b>stan_pwa</b> is an extension module to CmdStan. 
+The project <b>stan_pwa</b> is an extension module to CmdStan (https://github.com/stan-dev/cmdstan). 
 Its purpose is to simplify modelling partial wave analysis 
 of heavy meson physics. We implement such functions as
 Breit-Wigner/Flatte dynamical form factors, 
@@ -21,9 +21,9 @@ the results of the Stan fitting.
 This code may be interesting to you if you want to:  
 
  * See an example how to expose your functions to Stan (look at the `install` and `reload_libraries` functions of the `makefile`);
- * Fit a function that looks like "f(y,theta) = |A(y) * theta|^2", where "A(y)" and "theta" are complex vectors (look at `models/examples/two_toy_res/model.hpp`);
- * Use complex numbers in Stan (look at `include/complex`);
- * Use some model-dependent PWA functions (templated C++: `include/fct`).
+ * Fit a function that looks like "f(y,theta) = |A(y) * theta|^2", where "A(y)" and "theta" are complex vectors (look at `models/example_models/two_toy_res/src/model.hpp`);
+ * Use complex numbers in Stan (look at `src/complex`);
+ * Use some model-dependent PWA functions (templated C++: `src/fct`).
 
 ### Licensing
 
