@@ -30,6 +30,7 @@ test/bin/build/*
 *background_to_signal_ratio.py
 *STAN_data_generator.data.py
 *root
+*pdf
 
 # Link to the model file
 src/model.hpp
