@@ -1,5 +1,5 @@
 # stan_pwa
-CmdStan module for meson decay PWA
+CmdStan module for meson decay Partial Wave Analysis
 
 The project <b>stan_pwa</b> is an extension module to CmdStan (https://github.com/stan-dev/cmdstan). 
 Its purpose is to simplify modelling partial wave analysis 
@@ -40,7 +40,7 @@ Download CmdStan-2.9.0. Unzip it, download and install stan_pwa files:
  ..$ cd stan_pwa
  ..$ make -s install
 ```
-You also need to add the following line to your .bashrc file:
+You also need to add the following line to your `.bashrc` file:
 ```bash
 export PYTHONPATH=/your_path_to_stan_pwa/stan_pwa/lib/py:$PYTHONPATH
 ```  
@@ -49,10 +49,10 @@ export PYTHONPATH=/your_path_to_stan_pwa/stan_pwa/lib/py:$PYTHONPATH
 The module requires following dependencies:
 
  * libboost-python-dev;  
- * PyROOT (you should be able to call import ROOT during a python session).
+ * PyROOT (you should be able to call `import ROOT` during a python session).
  * numpy
 
-The PWA model is written in C++; however, it is often more convenient to python for tasks not directly related to sampling. Such tasks may include data analysis or calculation of the LF (likelihood function) normalization integrals. This is why wo use the boost library: it allows conversion of the c++ code to python modules. To get libboost-python-dev, run  
+The PWA model is written in C++; however, it is often more convenient to use python for tasks not directly related to sampling. Such tasks may include data analysis or calculation of the LF (likelihood function) normalization integrals. This is why we use the `boost` library: it allows conversion of the c++ code to python modules. To get `libboost-python-dev`, run  
 ```bash
  ..$ sudo apt-get install libboost-python-dev
 ```
@@ -62,7 +62,7 @@ The PyROOT package is used to wrap Stan output files to Root trees and vice vers
 ```bash
 export PYTHONPATH=$PYTHONPATH:/nfs/mnemosyne/sys/slc6/sw/root/x86-64/5.34.21/root/lib
 ```
-is present in your .bashrc file.
+is present in your `.bashrc` file.
 
 ### Example
 The following commands demonstrate how to generate data and sample one complex parameter modeling D->3pi decay via two fictitious Breit-Wigner resonances.
